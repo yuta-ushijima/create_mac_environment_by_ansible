@@ -10,6 +10,10 @@
 # tmp
 tmp
 
+# ssh_config_info
+roles/ssh/templates/ssh_config.j2
+roles/ssh/templates/brain_pem.j2
+
 # ansible-vault
 .vault_pass
 
