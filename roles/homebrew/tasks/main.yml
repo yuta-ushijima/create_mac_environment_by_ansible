@@ -1,0 +1,37 @@
+---
+
+- name: Make Homebrew Directroy
+  become: yes
+  file:
+    path: /opt/homebrew
+    state: directory
+    owner: "{{ local_user_name }}"
+    group: wheel
+    mode: 0755
+  register: homebrew_directory
+
+- name: Install Homebrew
+  shell: curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+  register: homebrew_install
+
+- name: Through path of homebrew
+  command: echo 'export PATH=/opt/homebrew/bin:$PATH' >> .zshrc
+
+- name: Reload zshrc
+  command: source ~/.zshrc
+
+- name: Check brew command
+  command: brew -v
+
+- name: Install packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  ignore_errors: true
+  loop:
+    - rbenv
+    - git
+    - go@1.9
+    - terraform
+    - docker
+    - zsh-syntax-highlighting

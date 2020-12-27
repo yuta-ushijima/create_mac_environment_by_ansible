@@ -1,0 +1,28 @@
+---
+
+- name: Check rbenv command
+  command: rbenv -v
+
+- name: Through path of rbenv
+  command: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+
+- name: Throgh path of rbenv init
+  command: echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.zshrc
+
+- name: Reload zshrc
+  command: source .zshrc
+
+- name: Install ruby
+  command: rbenv install 2.7.2
+
+- name: Reload shell
+  command: exec $SHELL -l
+
+- name: Set global ruby version
+  command: rbenv --global 2.7.1
+
+- name: Execute rbenv rehash
+  command: rbenv rehash
+
+- name: Check ruby command
+  command: ruby -v

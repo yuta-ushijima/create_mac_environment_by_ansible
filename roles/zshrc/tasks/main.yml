@@ -1,0 +1,21 @@
+---
+
+- name: Edit zshrc
+  become: yes
+  template:
+    src: roles/zshrc/templates/zshrc_template.j2
+    dest: /Users/{{ local_user_name }}/.zshrc
+    owner: "{{ local_user_name }}"
+    group: "{{ local_group_name }}"
+
+- name: Reload zshrc
+  become: yes
+  shell: source /Users/{{ local_user_name }}/.zshrc
+
+- name: Install Oh-my-zsh
+  become: yes
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+- name: exec shell
+  become: yes
+  shell: exec $SHELL -l

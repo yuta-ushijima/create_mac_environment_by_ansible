@@ -1,0 +1,34 @@
+---
+
+# 2020/12/05現在、M1チップでのcask installはエラーが出るので無視する
+- name: Install homebrew cask
+  homebrew:
+    name: cask
+    state: present
+  ignore_errors: yes
+
+- name: Install packages
+  homebrew:
+    install_options: cask
+    name: "{{ item }}"
+    state: present
+  ignore_errors: true
+  loop:
+    - google-chrome
+    - slack
+    - 1password
+    - zoom
+    - rubymine
+    - intellij-idea
+    - kindle
+    - alfred
+    - miro
+    - dropbox
+    - onedrive
+    - visual-studio-code
+    - skitch
+    - adobe-acrobat-pro
+    - postman
+    - discord
+    - docker
+    - deepl

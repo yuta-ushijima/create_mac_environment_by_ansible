@@ -1,0 +1,12 @@
+---
+- name: Playbook for localhost
+  become: no
+  hosts: localhost
+  connection: local
+  # 対象サーバの情報収集（しないのでno）
+  gather_facts: no
+  roles:
+    - { role: homebrew, tags: homebrew }
+    - { role: homebrew_cask, tags: cask }
+    - { role: ruby, tags: ruby }
+    - { role: zshrc, tags: zshrc }
