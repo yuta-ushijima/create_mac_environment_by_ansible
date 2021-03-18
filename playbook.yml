@@ -10,4 +10,5 @@
     - { role: homebrew_cask, tags: cask }
     - { role: ruby, tags: ruby }
     - { role: ssh, tags: ssh }
+    - { role: yarn, tags: yarn }
     - { role: zshrc, tags: zshrc }
