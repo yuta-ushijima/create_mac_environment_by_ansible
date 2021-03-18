@@ -1,0 +1,12 @@
+---
+
+- name: Install node.js packages
+  yarn:
+    global: yes
+    name: "{{ item }}"
+    state: present
+  ignore_errors: true
+  loop:
+    - eslint
+    - prettier
+    - nuxt-ts
