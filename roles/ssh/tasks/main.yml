@@ -1,0 +1,16 @@
+---
+
+- name: Edit ssh_config
+  template:
+    src: roles/ssh/templates/ssh_config.j2
+    dest: /Users/{{ local_user_name }}/.ssh/config
+    owner: "{{ local_user_name }}"
+    group: "{{ local_group_name }}"
+
+- name: Set brain.pem
+  template:
+    src: roles/ssh/templates/brain_pem.j2
+    dest: /Users/{{ local_user_name }}/.ssh/brain.pem
+    owner: "{{ local_user_name }}"
+    group: "{{ local_group_name }}"
+    mode: 0700
