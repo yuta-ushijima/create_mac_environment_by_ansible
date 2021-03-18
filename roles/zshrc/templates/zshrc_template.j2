@@ -114,10 +114,16 @@ plugins=(
 # Rubyの設定
 export PATH="$HOME/.rbenv/bin:$PATH"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(/opt/homebrew/bin/brew --prefix openssl@1.1)"
-
+export RUBY_CFLAGS="-DUSE_FFI_CLOSURE_ALLOC"
 
 # rbenvのパスを通す
 eval "$(/opt/homebrew/bin/rbenv init -)"
+
+# nodenvのパスを通す
+eval "$(/opt/homebrew/bin/nodenv init -)"
+
+# nodeの設定
+export PATH="$HOME/.nodenv/bin:$PATH"
 
 # homebrew
 export PATH=/opt/homebrew/bin:$PATH
@@ -146,7 +152,9 @@ export PATH=/opt/homebrew/bin:$PATH
 
 # export library
 # export PATH=$HOME/.nodebrew/current/bin:$PATH
-
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 
 # alias
 alias be='bundle exec'

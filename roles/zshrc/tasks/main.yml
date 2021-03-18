@@ -2,6 +2,7 @@
 
 - name: Edit zshrc
   become: yes
+  become_user: yuta_ushizima
   template:
     src: roles/zshrc/templates/zshrc_template.j2
     dest: /Users/{{ local_user_name }}/.zshrc
@@ -10,12 +11,15 @@
 
 - name: Reload zshrc
   become: yes
+  become_user: yuta_ushizima
   shell: source /Users/{{ local_user_name }}/.zshrc
 
 - name: Install Oh-my-zsh
   become: yes
+  become_user: yuta_ushizima
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 - name: exec shell
   become: yes
+  become_user: yuta_ushizima
   shell: exec $SHELL -l
