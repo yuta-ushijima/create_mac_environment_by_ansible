@@ -11,7 +11,7 @@
   homebrew:
     install_options: cask
     name: "{{ item }}"
-    state: present
+    state: latest
   ignore_errors: true
   loop:
     - google-chrome
@@ -20,6 +20,8 @@
     - zoom
     - rubymine
     - intellij-idea
+    - pycharm
+    - webstorm
     - kindle
     - alfred
     - miro
@@ -32,3 +34,4 @@
     - discord
     - docker
     - deepl
+    - chatwork

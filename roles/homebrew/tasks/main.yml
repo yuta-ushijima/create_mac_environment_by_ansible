@@ -23,15 +23,32 @@
 - name: Check brew command
   command: brew -v
 
+- name: upgrade homebrew
+  command: brew upgrade
+
 - name: Install packages
   homebrew:
     name: "{{ item }}"
     state: present
   ignore_errors: true
   loop:
+    - awscli
+    - ansible-lint
     - rbenv
+    - nodenv
     - git
-    - go@1.9
-    - terraform
+    - golang
+    - libffi
+    - mysql
+    - tig
+    - tfenv
+    - python3
     - docker
     - zsh-syntax-highlighting
+    - yarn
+
+- name: Install terraform from build source
+  homebrew:
+    name: terraform
+    install_options: build-from-source
+    state: present
