@@ -8,11 +8,10 @@
   ignore_errors: yes
 
 - name: Install packages
-  homebrew:
-    install_options: cask
+  community.general.homebrew_cask:
     name: "{{ item }}"
-    state: latest
-  ignore_errors: true
+    state: "installed"
+    install_options: "appdir=/Applications"
   loop:
     - google-chrome
     - slack
@@ -34,4 +33,5 @@
     - discord
     - docker
     - deepl
+    - stoplight-studio
     - chatwork
