@@ -1,0 +1,11 @@
+---
+# tasks file for oh-my-zsh
+- name: Install Oh-my-zsh
+  get_url:
+    url: "{{ download_url }}"
+    dest: $HOME
+
+- name: Install Zsh Theme of powerlevel10k
+  git:
+    repo: "{{ powerlevel10k_repo_url }}"
+    dest: $HOME/.oh-my-zsh/custom/themes/powerlevel10k

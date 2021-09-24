@@ -1,0 +1,4 @@
+---
+# vars file for oh-my-zsh
+download_url: https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+powerlevel10k_repo_url: https://github.com/romkatv/powerlevel10k.git

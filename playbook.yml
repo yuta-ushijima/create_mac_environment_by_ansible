@@ -9,6 +9,8 @@
     - { role: homebrew, tags: homebrew }
     - { role: homebrew_cask, tags: cask }
     - { role: ruby, tags: ruby }
+    - { role: rust, tags: rust }
     - { role: ssh, tags: ssh }
     - { role: yarn, tags: yarn }
     - { role: zshrc, tags: zshrc }
+    - { role: oh-my-zsh, tags: oh-my-zsh }
