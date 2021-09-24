@@ -12,3 +12,4 @@
     - { role: ssh, tags: ssh }
     - { role: yarn, tags: yarn }
     - { role: zshrc, tags: zshrc }
+    - { role: oh-my-zsh, tags: oh-my-zsh }
