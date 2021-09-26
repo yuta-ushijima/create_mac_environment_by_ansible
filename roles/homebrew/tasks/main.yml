@@ -39,6 +39,7 @@
     - git
     - rust
     - golang
+    - openssl
     - libffi
     - mysql
     - tig
@@ -47,6 +48,7 @@
     - docker
     - zsh-syntax-highlighting
     - yarn
+    - zstd
 
 - name: Install terraform from build source
   homebrew:
