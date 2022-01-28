@@ -36,6 +36,7 @@
     - ansible-lint
     - rbenv
     - nodenv
+    - imagemagick
     - git
     - rust
     - golang
