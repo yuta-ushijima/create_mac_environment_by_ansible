@@ -6,6 +6,7 @@
   # 対象サーバの情報収集（しないのでno）
   gather_facts: no
   roles:
+    - { role: curl, tags: curl }
     - { role: homebrew, tags: homebrew }
     - { role: homebrew_cask, tags: cask }
     - { role: ruby, tags: ruby }
